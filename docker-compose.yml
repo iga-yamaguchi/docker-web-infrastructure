@@ -3,7 +3,7 @@ version: '2'
 services:
   nginx:
     image: nginx
-    container_name: "laravel-nginx"
+    container_name: "web-nginx"
     ports:
       - "8080:80"
     volumes:
@@ -12,13 +12,13 @@ services:
 
   php:
     build: ./php
-    container_name: "laravel-php"
+    container_name: "web-php"
     volumes:
       - ./src:/src
 
   mysql:
     image: mysql
-    container_name: "laravel-mysql"
+    container_name: "web-mysql"
     restart: always
     environment:
       MYSQL_DATABASE: root
@@ -29,7 +29,7 @@ services:
   postgres:
     restart: always
     image: postgres:alpine
-    container_name: "laravel-postgres"
+    container_name: "web-postgres"
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: root
@@ -38,6 +38,6 @@ services:
 
   redis:
     image: redis:alpine
-    container_name: "laravel-redis"
+    container_name: "web-redis"
     ports: 
       - 16379:6379
