@@ -20,9 +20,6 @@ ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV COMPOSER_HOME /composer
 ENV PATH $PATH:/composer/vendor/bin
 
-# Install laravel installer
-RUN composer global require "laravel/installer"
-
 # PHP's DB setting
 RUN apt-get update \
     && apt-get install -y libpq-dev \
