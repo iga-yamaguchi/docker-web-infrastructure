@@ -15,6 +15,7 @@ services:
     container_name: "web-php"
     volumes:
       - ./src:/src
+      - ./php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
 
   mysql:
     image: mysql
